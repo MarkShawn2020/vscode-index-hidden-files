@@ -47,7 +47,6 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install --no-frozen-lockfile
-          pnpm install --no-frozen-lockfile -w
         
       - name: Build extension
         run: pnpm build
