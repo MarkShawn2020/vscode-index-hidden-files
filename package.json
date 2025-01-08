@@ -1,14 +1,19 @@
 {
-  "name": "index-hidden-files",
+  "name": "vscode-index-hidden-files",
   "displayName": "Index Hidden Files",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.86.0"
   },
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markshawn2020/vscode-index-hidden-files.git"
+  },
+  "publisher": "markshawn2020",
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
@@ -29,21 +34,26 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run package",
     "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
     "watch": "npm-run-all -p watch:*",
     "watch:esbuild": "node esbuild.js --watch",
     "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
-    "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "build": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "package": "vsce package --no-dependencies -o dist",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "publish:vscode": "vsce publish --no-dependencies",
+    "publish:ovsx": "dotenv -- ovsx publish \"$(ls -t dist/*.vsix | head -n1)\" -p \"$OVSX_TOKEN\"",
+    "ext:package": "pnpm build && pnpm package",
+    "ext:publish:vscode": "pnpm publish:vscode",
+    "ext:publish:ovsx": "pnpm publish:ovsx"
   },
   "devDependencies": {
-    "@types/vscode": "^1.96.0",
+    "@types/vscode": "^1.86.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
