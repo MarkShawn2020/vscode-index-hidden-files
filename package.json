@@ -46,7 +46,7 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
     "test": "vscode-test",
-    "publish:vscode": "dotenv -- vsce publish --no-dependencies -p \"$OVSX_TOKEN\"",
+    "publish:vscode": "dotenv -- vsce publish --no-dependencies -p \"$VSCE_PAT\"",
     "publish:ovsx": "dotenv -- ovsx publish \"$(ls -t dist/*.vsix | head -n1)\" -p \"$OVSX_TOKEN\"",
     "ext:package": "pnpm build && pnpm package",
     "ext:publish:vscode": "pnpm publish:vscode",
