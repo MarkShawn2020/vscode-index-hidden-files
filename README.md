@@ -1,53 +1,61 @@
-# index-hidden-files README
+# Index Hidden Files
 
-This is the README for your extension "index-hidden-files". After writing up a brief description, we recommend including the following sections.
+A VSCode extension that helps index files for Windsurf and similar applications by automatically opening and closing files recursively.
+
+![demo](<Screen Recording 2025-01-09 at 06.55.00.gif>)
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- 🔍 Recursively opens and closes files in selected directories
+- 🎯 Right-click menu integration for easy access
+- ⚡ Fast indexing with configurable delay
+- 🚫 Intelligent file type filtering
+- 📊 Progress indication during indexing
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Install the extension from VSCode marketplace
+2. Restart VSCode
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Requirements
+1. Right-click on any file or folder in the VSCode explorer
+2. Select "Index Files for Windsurf" from the context menu
+3. Wait for the indexing process to complete
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Technical Details
 
-## Extension Settings
+The extension:
+- Uses VSCode's workspace API for file operations
+- Implements smart file filtering (ignores binary files)
+- Maintains a small memory footprint
+- Closes files automatically after indexing
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Configuration
 
-For example:
+Default ignored file extensions:
+- `.exe`
+- `.dll`
+- `.jpg`
+- `.png`
+- `.gif`
 
-This extension contributes the following settings:
+## Development
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+```bash
+# Install dependencies
+pnpm install
 
-## Known Issues
+# Run tests
+pnpm test
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+# Package extension
+pnpm run package
+```
 
-## Release Notes
+## License
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
+MIT
 
 ## Following extension guidelines
 
