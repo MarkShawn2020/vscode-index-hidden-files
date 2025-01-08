@@ -25,7 +25,7 @@ async function processFileOrDirectory(uri: vscode.Uri): Promise<void> {
     if (stat.type === vscode.FileType.Directory) {
         const entries = await vscode.workspace.fs.readDirectory(uri);
         for (const [name, type] of entries) {
-            const childUri = vscode.Uri.joinPath(uri, name);
+            const childUri = vscode.Uri.file(path.join(uri.fsPath, name));
             await processFileOrDirectory(childUri);
         }
     } else if (stat.type === vscode.FileType.File) {
