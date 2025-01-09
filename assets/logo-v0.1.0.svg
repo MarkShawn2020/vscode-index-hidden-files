@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Folder base -->
+  <path d="M40 60 L90 60 L100 40 L160 40 L160 160 L40 160 Z" fill="#1a237e"/>
+  <!-- Hidden dot -->
+  <circle cx="100" cy="100" r="15" fill="#90caf9" fill-opacity="0.6"/>
+  <!-- Typography -->
+  <text x="70" y="120" font-family="Roboto, sans-serif" font-size="24" fill="white">IHF</text>
+</svg>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color:#0284c7"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="200" height="200" fill="#1e293b"/>
+  
+  <!-- Hidden files representation -->
+  <g transform="translate(70, 85)">
+    <text x="0" y="0" font-family="monospace" font-size="14" fill="#94a3b8">.git</text>
+    <text x="0" y="20" font-family="monospace" font-size="14" fill="#94a3b8">.env</text>
+    <text x="0" y="40" font-family="monospace" font-size="14" fill="#94a3b8">.config</text>
+  </g>
+  
+  <!-- Magnifying glass -->
+  <g transform="translate(100, 100) rotate(-45)">
+    <!-- Glass handle -->
+    <rect x="30" y="-4" width="35" height="8" fill="url(#glassGradient)" rx="4"/>
+    
+    <!-- Glass circle -->
+    <circle cx="0" cy="0" r="30" 
+            fill="none" 
+            stroke="url(#glassGradient)" 
+            stroke-width="8"/>
+            
+    <!-- Reflection -->
+    <path d="M-15,-15 L-5,-5" 
+          stroke="white" 
+          stroke-width="2" 
+          opacity="0.6"/>
+  </g>
+  
+  <!-- Scanning line animation -->
+  <rect x="60" y="95" width="80" height="2" 
+        fill="#0ea5e9" 
+        opacity="0.8">
+    <animate attributeName="y" 
+             values="85;125;85" 
+             dur="2s" 
+             repeatCount="indefinite"/>
+  </rect>
+</svg>

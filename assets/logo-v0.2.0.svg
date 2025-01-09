@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background shapes -->
+  <rect x="60" y="60" width="80" height="80" rx="20" 
+        transform="rotate(-15, 100, 100)" 
+        fill="url(#mainGradient)" 
+        opacity="0.8"/>
+  
+  <!-- Overlapping circle -->
+  <circle cx="100" cy="100" r="35" 
+          fill="#22d3ee" 
+          opacity="0.6" 
+          filter="url(#glow)"/>
+  
+  <!-- Small decorative dots -->
+  <circle cx="130" cy="70" r="5" fill="white" opacity="0.8"/>
+  <circle cx="70" cy="130" r="5" fill="white" opacity="0.8"/>
+  
+  <!-- Hidden file symbol -->
+  <path d="M85 100 L115 100 M100 85 L100 115" 
+        stroke="white" 
+        stroke-width="3" 
+        opacity="0.9"/>
+</svg>

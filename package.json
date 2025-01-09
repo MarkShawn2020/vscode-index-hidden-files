@@ -1,8 +1,9 @@
 {
   "name": "vscode-index-hidden-files",
   "displayName": "Index Hidden Files",
-  "description": "",
+  "description": "Efficiently index and search hidden files in your workspace",
   "version": "0.1.2",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.81.0"
   },

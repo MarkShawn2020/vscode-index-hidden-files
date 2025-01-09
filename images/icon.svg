@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1e2e"/>
+      <stop offset="100%" style="stop-color:#313244"/>
+    </linearGradient>
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#89b4fa"/>
+      <stop offset="100%" style="stop-color:#89dceb"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="128" height="128" rx="24" fill="url(#bgGradient)"/>
+  
+  <!-- Hidden dot pattern -->
+  <g transform="translate(64, 64)" filter="url(#glow)">
+    <!-- Central dot (larger) -->
+    <circle cx="0" cy="0" r="6" fill="#cba6f7" opacity="0.9"/>
+    
+    <!-- Orbital dots -->
+    <g transform="rotate(0)">
+      <circle cx="20" cy="0" r="4" fill="#f5c2e7" opacity="0.7"/>
+    </g>
+    <g transform="rotate(72)">
+      <circle cx="20" cy="0" r="4" fill="#f5c2e7" opacity="0.7"/>
+    </g>
+    <g transform="rotate(144)">
+      <circle cx="20" cy="0" r="4" fill="#f5c2e7" opacity="0.7"/>
+    </g>
+    <g transform="rotate(216)">
+      <circle cx="20" cy="0" r="4" fill="#f5c2e7" opacity="0.7"/>
+    </g>
+    <g transform="rotate(288)">
+      <circle cx="20" cy="0" r="4" fill="#f5c2e7" opacity="0.7"/>
+    </g>
+  </g>
+  
+  <!-- Magnifying glass -->
+  <g transform="translate(64, 64) rotate(-45) translate(24, 0)" filter="url(#glow)">
+    <!-- Glass handle -->
+    <rect x="0" y="-3" width="28" height="6" fill="url(#glassGradient)" rx="3"/>
+    
+    <!-- Glass circle -->
+    <circle cx="-24" cy="0" r="16" 
+            fill="none" 
+            stroke="url(#glassGradient)" 
+            stroke-width="6"/>
+  </g>
+</svg>
