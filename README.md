@@ -2,7 +2,7 @@
 
 A VSCode extension that helps index files for Windsurf and similar applications by automatically opening and closing files recursively.
 
-![demo](assets/Screen%20Recording%202025-01-09%20at%2006.55.00.gif)
+![demo](assets/demo.gif)
 
 ## Features
 
